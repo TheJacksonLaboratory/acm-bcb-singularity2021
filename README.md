@@ -7,10 +7,9 @@ Hello, and welcome to this tutorial is a primer on how to use the Singularity co
 
 Click [Here](https://github.com/TheJacksonLaboratory/acm-bcb-singularity2021/blob/main/ACM-BCB%20user%20Lab%20pdf.pdf) to view a step-by-step guide with images. 
 
-**1.** [Connect to the Azure Lab enviornment](https://labs.azure.com/register/s9faxsnt)
+**1.** [Connect to the Azure Lab enviornment](https://labs.azure.com/register/s9faxsnt){:target="_blank"}
 
 <a href="https://labs.azure.com/register/s9faxsnt" target="_blank">Connect to the Azure Lab Environment</a>
-
 
 **2.** Sign-in with your institutional Microsoft/Office 365 account or personal Microsoft account
 
