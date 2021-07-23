@@ -39,6 +39,10 @@ Use the password **acmBCB2021** to sign into your virtual machine
 
 ***Windows Users***:  Using an app such as [Putty](https://www.putty.org/) or [MobaXterm](https://mobaxterm.mobatek.net/download.html), paste in the previously copied *labuser@ml-lab-de...* hostname address in the Host Name box ensuring the connection type is SSH.  Put in the 5 digit port number from the previous step.  This likely will be a different number than the image below.  Click Open to connect.
 
+If prompted, click "Accept" to accept the host ID.
+
+Use the password **acmBCB2021** to sign into your virtual machine
+
 ![image](https://user-images.githubusercontent.com/49786676/126813902-9cb21304-a2f4-4c85-9d7d-965cd5a06104.png)
 
 ![image](https://user-images.githubusercontent.com/49786676/126814016-018dd200-6e80-408e-a3a3-d6841f7c977f.png)
