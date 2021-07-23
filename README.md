@@ -9,6 +9,9 @@ Click [Here](https://github.com/TheJacksonLaboratory/acm-bcb-singularity2021/blo
 
 **1.** [Connect to the Azure Lab enviornment](https://labs.azure.com/register/s9faxsnt)
 
+<a href="https://labs.azure.com/register/s9faxsnt" target="_blank">Connect to the Azure Lab Environment</a>
+
+
 **2.** Sign-in with your institutional Microsoft/Office 365 account or personal Microsoft account
 
 ![image](https://user-images.githubusercontent.com/49786676/126809695-c359fa1a-404c-48a4-a787-6c539561c0e8.png)
