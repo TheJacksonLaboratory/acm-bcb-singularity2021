@@ -7,9 +7,8 @@ Hello, and welcome to this tutorial is a primer on how to use the Singularity co
 
 Click [Here](https://github.com/TheJacksonLaboratory/acm-bcb-singularity2021/blob/main/ACM-BCB%20user%20Lab%20pdf.pdf) to view a step-by-step guide with images. 
 
-**1.** [Connect to the Azure Lab enviornment](https://labs.azure.com/register/s9faxsnt){:target="_blank"}
+**1.** [Connect to the Azure Lab enviornment](https://labs.azure.com/register/s9faxsnt)
 
-<a href="https://labs.azure.com/register/s9faxsnt" target="_blank">Connect to the Azure Lab Environment</a>
 
 **2.** Sign-in with your institutional Microsoft/Office 365 account or personal Microsoft account
 
@@ -36,7 +35,12 @@ Use the password **acmBCB2021** to sign into your virtual machine
 
 ![image](https://user-images.githubusercontent.com/49786676/126811176-513d594f-e480-472e-a1ae-aacf6bb5c0b9.png)
 
-***Windows Users***:  Using an app such as [Putty](https://www.putty.org/) or [MobaXterm](https://mobaxterm.mobatek.net/download.html), paste in the previously copied labuser@ml-lab-de... hostname address in the Host Name box ensuring the connection type is SSH.  Put in the 5 digit port number from the previous step.  This likely will be a different number than the image below.  Click Open to connect.
+***Windows Users***:  Using an app such as [Putty](https://www.putty.org/) or [MobaXterm](https://mobaxterm.mobatek.net/download.html), paste in the previously copied *labuser@ml-lab-de...* hostname address in the Host Name box ensuring the connection type is SSH.  Put in the 5 digit port number from the previous step.  This likely will be a different number than the image below.  Click Open to connect.
+
+![image](https://user-images.githubusercontent.com/49786676/126813902-9cb21304-a2f4-4c85-9d7d-965cd5a06104.png)
+
+![image](https://user-images.githubusercontent.com/49786676/126814016-018dd200-6e80-408e-a3a3-d6841f7c977f.png)
+
 
 
 
