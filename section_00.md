@@ -1,8 +1,24 @@
 # Welcome and Introductions
 
-Hello, and welcome to this tutorial is a primer on how to use the Singularity containerization framework to install customizable applications.  Use the instructions below to connect to the Azure Lab environment for this course.
+Welcome to this tutorial on using the Singularity containerization framework to install customizable applications.  
 
-### Connect to the course lab environment ###
+## Presenters
+- [William S. Sanders (Shane)](shane.sanders@jax.org) is the senior manager of the Cyberinfrastructure group at The Jackson Laboratory, where his team focuses on providing the high performance computing, storage, and other data science resources required to meet the needs of JAX faculty research efforts.  Dr. Sanders has a BS in Biochemistry and a BS in Computer Science, and obtained an MS in Computer Science and a PhD in Molecular Biology from Mississippi State University.  His research efforts focus on using artificial intelligence and high performance computing to provide insight into biological problems, in a variety of species including chicken, cotton, and rattlesnake.
+- [Jason S. Macklin](jason.macklin@jax.org) is the HPC Systems Engineer at The Jackson Laboratory.  He is responsible for the design and architecture of JAX HPC systems and currently manages 7 disparate HPC resources in support of the computational needs of the JAX research efforts.  Prior to JAX, Mr. Macklin served as HPC Systems Engineer at 454 Life Sciences and Roche Life Science.  Mr. Macklin obtained a BA in English from the University of Connecticut.
+- [Richard Yanicky](richard.yanicky@jax.org) is a Systems Analyst at The Jackson Laboratory, supporting the HPC and bioinformatics community through outreach and one on one project work. He holds both BS and MS degrees in Applied and Computational Mathematics from the University of Connecticut, in addition to a MS in Applied Statistics from Worcester Polytechnic Institute. He has 20 years in industry and academia supporting corporate drug discovery pipelines and biological research pipelines for companies such as Pfizer, Abbott, and Eli Lilly. Prior to JAX, Richard was most recently at UCSD supporting research in human genetics for short tandem repeats and epigenetics.
+- [Aaron McDivitt](aaron.mcdivitt@jax.org) is a Systems Administrator at JAX focusing not only on maintaining the underlying storage and HPC infrastructure, but also educating and assisting the HPC user community with their research needs.  In a past life, Aaron was a math and science educator/coach at the middle and high school levels, but transitioned to the IT field in 2013.  He received his BA in Education from Cedarville University.
+
+## Objectives
+* Learn what a software container is and why adoption of containerized applications is increasing.
+* Learn what existing, online resources for containers are already available (ex: DockerHub, Singularity-Hub).
+* Learn how to navigate and interact with containers from the Linux command line.
+* Learn how to build your own containers both using container definition files and from scratch.
+* Learn how to leverage containers for your existing scientific workflows.
+
+
+## Connecting to the Tutorial Resources
+
+Please use the instructions below to connect to the Azure Lab environment for this course.
 
 ***Note:***  In order to connect to our Azure Lab environment, you must sign-in with a Microsoft account.  This could be your organizational Microsoft/Office 365 email account, a personal Microsoft account, or if you do not have one feel free to [create a new Microsoft account.]( https://signup.live.com/signup?lcid=1033&wa=wsignin1.0&rpsnv=13&ct=1626965616&rver=7.0.6738.0&wp=MBI_SSL&wreply=https%3a%2f%2faccount.microsoft.com%2fauth%2fcomplete-signin%3fru%3dhttps%253A%252F%252Faccount.microsoft.com%252F%253Frefp%253Dsignedout-index%2526refd%253Dwww.google.com&lc=1033&id=292666&lw=1&fl=easi2&mkt=en-US&lic=1&uaid=b86e42f7131342ba8c0b54d0668262f5)
 
@@ -45,3 +61,6 @@ Use the password **acmBCB2021** to sign into your virtual machine
 ![image](https://user-images.githubusercontent.com/49786676/126813902-9cb21304-a2f4-4c85-9d7d-965cd5a06104.png)
 
 ![image](https://user-images.githubusercontent.com/49786676/126814016-018dd200-6e80-408e-a3a3-d6841f7c977f.png)
+
+
+
