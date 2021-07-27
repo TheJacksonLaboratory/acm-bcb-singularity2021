@@ -1,5 +1,13 @@
-# acm-bcb-singularity2021
-Singularity Course Repo for 2021 ACM-BCB Conference
+# Introduction to Application Containerization Using Singularity
+
+## Agenda / Outline
+
+0. [Welcome & Introduction](section_00.md)
+1. [What is a Container?](section_01.md)
+2. [Singularity Basics](section_02.md)
+3. [Scientific Containers](section_03.md)
+4. [Building and Modifying Containers](section_04.md)
+5. [Using Containers](section_05.md)
 
 Hello, and welcome to this tutorial is a primer on how to use the Singularity containerization framework to install customizable applications.  Use the instructions below to connect to the Azure Lab environment for this course.
 
