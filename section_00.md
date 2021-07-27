@@ -1,3 +1,3 @@
-# Introduction
+# Welcome and Introductions
 
 text.
