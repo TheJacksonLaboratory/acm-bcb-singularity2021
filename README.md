@@ -17,7 +17,7 @@ Containerization technologies (Docker, Singularity, etc.) are rapidly becoming a
 ## Agenda / Outline
 All Times in US Central Daylight Time.
 
-0. 09:00am-09:10am: [Welcome & Introduction](section_00.md)
+0. 09:00am-09:10am: [Welcome & Introductions](section_00.md)
 1. 09:10am-09:25am: [What is a Container?](section_01.md)
 2. 09:25am-09:55am: [Singularity Basics](section_02.md)
 3. 09:55am-10:10am: [Scientific Containers](section_03.md)
