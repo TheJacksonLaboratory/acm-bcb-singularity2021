@@ -349,7 +349,7 @@ total 91384
 -rwxrwxr-x. 1 labuser labuser 93574075 Jul 28 17:31 lolcow_latest.sif
 ```
 
-#### .sif stands for “singularity image format” and is the default image format singularity uses.   
+#### The .sif extension stands for “singularity image format” and is the default image format singularity uses.   
 
 #### Notice how singularity images appear as single files unlike Docker images which have multiple layers  
 
