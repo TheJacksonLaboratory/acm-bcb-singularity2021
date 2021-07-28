@@ -1,10 +1,10 @@
 # Singularity Basics
 
-## Learn Singularity basics:  pull, shell, exec, run (./container), search, inspect, bind mounts (25-30 min, Jason) 
+## Learn Singularity basics:  pull, shell, exec, run (./container), search, inspect, bind mounts (25-30 min) 
 
 - Now that we have a brief overview of what containers are, let’s get into how we can actually interact with them.   
 
-```singularity --help
+``` singularity --help
     
 Linux container platform optimized for High Performance Computing (HPC) and
 Enterprise Performance Computing (EPC)
@@ -63,13 +63,13 @@ Examples:
   $ singularity help instance start
 
 
-For additional help or support, please visit https://www.sylabs.io/docs/```
+For additional help or support, please visit https://www.sylabs.io/docs/
 
-```man singularity shell```
+man singularity shell
 
 - How do we find container to use?   
 
-```singularity search samtools``` 
+singularity search samtools 
 
 singularity search star to find star containers 
 
@@ -117,4 +117,4 @@ type exit to leave the container environment
 
 Executing Containerized Commands with Exec 
 
-singularity exec lowcow.sif cowsay ‘How did you get out of the container?’ 
+singularity exec lowcow.sif cowsay ‘How did you get out of the container?’
