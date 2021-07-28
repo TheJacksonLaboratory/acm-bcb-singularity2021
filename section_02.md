@@ -2,10 +2,10 @@
 
 ## Learn Singularity basics:  pull, shell, exec, run (./container), search, inspect, bind mounts (25-30 min) 
 
-- Now that we have a brief overview of what containers are, let’s get into how we can actually interact with them.   
+Now that we have a brief overview of what containers are, let’s get into how we can actually interact with them.   
 
-``` singularity --help
-    
+`# singularity --help`
+
 Linux container platform optimized for High Performance Computing (HPC) and
 Enterprise Performance Computing (EPC)
 
