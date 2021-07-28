@@ -1,6 +1,6 @@
 # Singularity Basics
 
-## Learn Singularity basics:  pull, shell, exec, run (./container), search, inspect, bind mounts (25-30 min) 
+## Learn Singularity basics:  pull, shell, exec, search, bind mounts (25-30 min) 
 
 #### Now that we have a brief overview of what containers are, let’s get into how we can actually interact with them.   
 
@@ -702,6 +702,19 @@ Singularity> which cowsay
 ```
 Singularity> fortune 
 You're definitely on their list.  The question to ask next is what list it is.
+
+Singularity> fortune | cowsay | lolcat
+ ________________________________
+/ All generalizations are false, \
+| including this one.            |
+|                                |
+\ -- Mark Twain                  /
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 ```
 
 #### Type exit to leave the container environment 
@@ -718,4 +731,23 @@ You're definitely on their list.  The question to ask next is what list it is.
             (__)\       )\/\
                 ||----w |
                 ||     ||
+```
+
+#### Now we can bind a path from the host OS into our container. What does our default container show?
+
+```
+singularity exec lolcow_latest.sif ls /data
+/bin/ls: cannot access '/data': No such file or directory
+```
+
+#### Using the --bind option allows us to make external paths available within our container.
+
+```
+singularity exec --bind /data lolcow_latest.sif ls -al /data
+total 398544
+drwxr-xr-x. 3 root    root         4096 Jul 28 18:31 .
+drwxr-xr-x. 1 labuser labuser       100 Jul 28 18:36 ..
+-rw-r--r--. 1 root    root          366 Jul 28 16:04 DATALOSS_WARNING_README.txt
+-rwxr-xr-x. 1 root    root    408084480 Jul 28 18:31 bamtools_v2.4.0_cv4.sif
+drwx------. 2 root    root        16384 Jul 28 16:04 lost+found
 ```
