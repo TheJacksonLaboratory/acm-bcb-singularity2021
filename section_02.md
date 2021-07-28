@@ -733,17 +733,27 @@ Singularity> fortune | cowsay | lolcat
                 ||     ||
 ```
 
-#### Now we can bind a path from the host OS into our container. What does our default container show?
+#### Now we can bind a path from the host OS into our container. What does our host system have in the /data path and what does our container show?
 
 ```
-singularity exec lolcow_latest.sif ls /data
+# ls -al /data/
+total 398544
+drwxr-xr-x. 3 root root      4096 Jul 28 18:31 .
+drwxr-xr-x. 3 root root        22 Jul  9 14:40 ..
+-rwxr-xr-x. 1 root root 408084480 Jul 28 18:31 bamtools_v2.4.0_cv4.sif
+-rw-r--r--. 1 root root       366 Jul 28 16:04 DATALOSS_WARNING_README.txt
+drwx------. 2 root root     16384 Jul 28 16:04 lost+found
+```
+
+```
+# singularity exec lolcow_latest.sif ls /data/
 /bin/ls: cannot access '/data': No such file or directory
 ```
 
 #### Using the --bind option allows us to make external paths available within our container.
 
 ```
-singularity exec --bind /data lolcow_latest.sif ls -al /data
+# singularity exec --bind /data lolcow_latest.sif ls -al /data/
 total 398544
 drwxr-xr-x. 3 root    root         4096 Jul 28 18:31 .
 drwxr-xr-x. 1 labuser labuser       100 Jul 28 18:36 ..
