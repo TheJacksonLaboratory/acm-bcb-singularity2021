@@ -603,7 +603,7 @@ INFO:    Creating SIF file...
 
 #### Shelling into a container:  Now, what do we do with these containers we pulled?  First, one thing you can do with a container is interact with it 
 
-#### ***SECURITY WARNING:  We have been pulling containers someone else has built.  How do we know these containers are safe to use and no malicious content?  Answer:  you don’t.  You can assume based on the number of downloads (from Docker Hub) if a container is legitimate or not, but you can’t truly know at face value if malicious code is embedded.  Fortunately, Singularity allows rootless containers to run so you can’t cause harm to the underlying system if you run as a non-admin user.   
+### ***SECURITY WARNING:  We have been pulling containers someone else has built.  How do we know these containers are safe to use and no malicious content?  Answer:  you don’t.  You can assume based on the number of downloads (from Docker Hub) if a container is legitimate or not, but you can’t truly know at face value if malicious code is embedded.  Fortunately, Singularity allows rootless containers to run so you can’t cause harm to the underlying system if you run as a non-admin user.   
 
 #### First, let’s see what OS our  Lab VM is running:  cat /etc/*release .  It looks like we are running Centos 8.4. 
 
@@ -631,7 +631,8 @@ CentOS Linux release 8.4.2105
 #### Now let's open a shell into our container
 
 ```
-# singularity shell lolcow_latest.sif   
+# singularity shell lolcow_latest.sif
+Singularity>
 ```
 
 #### If you notice our command prompt has changed and we are now in an interactive command prompt inside the container 
@@ -675,14 +676,46 @@ Singularity> whoami
 labuser
 ```
 
-Run cowsay hello and notice what happens.  Cowsay is a program inside the container.  Run cowsay Welcome to this course! 
+#### Run cowsay hello and notice what happens.  Cowsay is a program inside the container.  Run cowsay Welcome to this course! 
 
-Run which cowsay and show how this is an application in the container and the path of it.   
+```
+Singularity> cowsay hello
+ _______
+< hello >
+ -------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
 
-Run fortune then run fortune | cowsay.  Then run fortune | cowsay | lolcat to show how you can pipe applications together 
+#### Run which cowsay and show how this is an application in the container and the path of it.   
 
-type exit to leave the container environment 
+```
+Singularity> which cowsay
+/usr/games/cowsay
+```
 
-Executing Containerized Commands with Exec 
+#### Run fortune then run fortune | cowsay.  Then run fortune | cowsay | lolcat to show how you can pipe applications together 
 
-singularity exec lowcow.sif cowsay ‘How did you get out of the container?’
+```
+Singularity> fortune 
+You're definitely on their list.  The question to ask next is what list it is.
+```
+
+#### Type exit to leave the container environment 
+
+#### Executing Containerized Commands with Exec 
+
+```
+# singularity exec lolcow_latest.sif cowsay ‘How did you get out of the container?’
+ _______________________________________
+< How did you get out of the container? >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
