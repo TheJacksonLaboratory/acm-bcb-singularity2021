@@ -1,6 +1,13 @@
 # Welcome and Introductions
 
-Welcome to this tutorial on using the Singularity containerization framework to install customizable applications.  
+Welcome to this tutorial on using the Singularity containerization framework to install customizable applications. 
+
+This tutorial is a primer on how to use the Singularity containerization framework to install customizable applications and use those containers on Linux based computer systems.
+
+Software containers and containerization technologies are emerging as a valuable research artifact to facilitate and promote scientific reproducibility.  Software containers provide a separation of the containerized application environment from the host system, acting as an abstracted virtualization layer within the operating system of the host machine.  One of the primary reasons behind this rapid adoption of containerization frameworks is that this abstracted virtualization layer allows containers to be easily migrated from one system and executed on another as long as the underlying containerization framework is present on a given system.  Another major factor driving adoption, particularly in the computational biology and bioinformatics domain, is that this abstraction and virtualization allows application and container developers to bundle up the necessary prerequisites and software dependencies required by their applications, allowing their applications to be easily transferred and executed by others seeking to utilize them on their own datasets.
+
+This tutorial will allow participants to interact with and build Singularity containers for various computational biology and bioinformatics applications using cloud hosted resources (ex: instances in AWS, GCP, or Azure) provided to each participant for the duration of the tutorial and configured with a host system Linux operating system and Singularity containerization framework.  
+
 
 ## Presenters
 - [William S. Sanders (Shane)](shane.sanders@jax.org) is the senior manager of the Cyberinfrastructure group at The Jackson Laboratory, where his team focuses on providing the high performance computing, storage, and other data science resources required to meet the needs of JAX faculty research efforts.  Dr. Sanders has a BS in Biochemistry and a BS in Computer Science, and obtained an MS in Computer Science and a PhD in Molecular Biology from Mississippi State University.  His research efforts focus on using artificial intelligence and high performance computing to provide insight into biological problems, in a variety of species including chicken, cotton, and rattlesnake.
