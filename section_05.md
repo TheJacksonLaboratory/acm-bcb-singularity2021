@@ -163,26 +163,28 @@ wget ftp://ftp.ncbi.nih.gov/refseq/daily/rsnc.0728.2021.faa.gz
 ```
 
 ```
-$ time wget ftp://ftp.ncbi.nih.gov/refseq/daily/rsnc.0728.2021.faa.gz
---2021-07-29 12:34:17--  ftp://ftp.ncbi.nih.gov/refseq/daily/rsnc.0728.2021.faa.gz
-           => ‘rsnc.0728.2021.faa.gz.1’
-Resolving ftp.ncbi.nih.gov (ftp.ncbi.nih.gov)... 165.112.9.230, 165.112.9.229, 2607:f220:41f:250::228, ...
-Connecting to ftp.ncbi.nih.gov (ftp.ncbi.nih.gov)|165.112.9.230|:21... connected.
-Logging in as anonymous ... Logged in!
-==> SYST ... done.    ==> PWD ... done.
-==> TYPE I ... done.  ==> CWD (1) /refseq/daily ... done.
-==> SIZE rsnc.0728.2021.faa.gz ... 683095678
-==> PASV ... done.    ==> RETR rsnc.0728.2021.faa.gz ... done.
-Length: 683095678 (651M) (unauthoritative)
+gunzip rsnc.0728.2021.faa.gz
+```
 
-rsnc.0728.2021.faa. 100%[===================>] 680.18M  1.97MB/s    in 10m 54s
+Now we will convert the protein FASTA file we downloaded into a BLAST database to search against.
 
-2021-07-29 12:45:12 (1.04 MB/s) - ‘rsnc.0728.2021.faa.gz.1’ saved [713218602]
+```
+$ time singularity exec BLAST.sif makeblastdb -in rsnc.0728.2021.faa -dbtype prot -out RefSeqExample
+```
 
+This gives us the following:
+```
+Building a new DB, current time: 07/29/2021 18:02:04
+New DB name:   /home/labuser/RefSeqExample
+New DB title:  rsnc.0728.2021.faa
+Sequence type: Protein
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 3094926 sequences in 228.992 seconds.
 
-real    10m54.959s
-user    0m2.830s
-sys    0m17.863s
+real    3m50.119s
+user    1m49.394s
+sys     0m4.019s
 ```
 
 ```
