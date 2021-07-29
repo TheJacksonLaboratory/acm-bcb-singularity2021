@@ -158,12 +158,11 @@ Same output, so now let's put our new BLAST container to use!
 
 ## Acquiring Protein Data
 
-```
-wget ftp://ftp.ncbi.nih.gov/refseq/daily/rsnc.0728.2021.faa.gz
-```
+To start, we are going to need some data to serve as our database to search against.  For this exercise, we will use NCBI's daily RefSeq build of proteins.  Let's download and uncompress this file.
 
 ```
-gunzip rsnc.0728.2021.faa.gz
+$ wget ftp://ftp.ncbi.nih.gov/refseq/daily/rsnc.0728.2021.faa.gz
+$ gunzip rsnc.0728.2021.faa.gz
 ```
 
 Now we will convert the protein FASTA file we downloaded into a BLAST database to search against.
@@ -172,7 +171,7 @@ Now we will convert the protein FASTA file we downloaded into a BLAST database t
 $ time singularity exec BLAST.sif makeblastdb -in rsnc.0728.2021.faa -dbtype prot -out RefSeqExample
 ```
 
-This gives us the following:
+This gives us the following output:
 ```
 Building a new DB, current time: 07/29/2021 18:02:04
 New DB name:   /home/labuser/RefSeqExample
@@ -187,7 +186,9 @@ user    1m49.394s
 sys     0m4.019s
 ```
 
+Now we need some sequences of interest to search against the RefSeq database we just constructed.  Let's download all the RefSeq proteins for Human Chromosome 1:
+
 ```
-wget ftp://ftp.ncbi.nih.gov/refseq/H_sapiens/mRNA_Prot/human.1.protein.faa.gz
-gunzip human.1.protein.faa.gz
+$ wget ftp://ftp.ncbi.nih.gov/refseq/H_sapiens/mRNA_Prot/human.1.protein.faa.gz
+$ gunzip human.1.protein.faa.gz
 ```
