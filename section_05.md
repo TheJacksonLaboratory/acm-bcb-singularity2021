@@ -162,6 +162,29 @@ To start, we are going to need some data to serve as our database to search agai
 
 ```
 $ wget ftp://ftp.ncbi.nih.gov/refseq/daily/rsnc.0728.2021.faa.gz
+```
+
+This shouldn't take long, and produces the following output:
+```
+--2021-07-29 20:05:24--  ftp://ftp.ncbi.nih.gov/refseq/daily/rsnc.0728.2021.faa.gz
+           => ‘rsnc.0728.2021.faa.gz’
+Resolving ftp.ncbi.nih.gov (ftp.ncbi.nih.gov)... 165.112.9.229, 130.14.250.13, 2607:f220:41e:250::13, ...
+Connecting to ftp.ncbi.nih.gov (ftp.ncbi.nih.gov)|165.112.9.229|:21... connected.
+Logging in as anonymous ... Logged in!
+==> SYST ... done.    ==> PWD ... done.
+==> TYPE I ... done.  ==> CWD (1) /refseq/daily ... done.
+==> SIZE rsnc.0728.2021.faa.gz ... 683095678
+==> PASV ... done.    ==> RETR rsnc.0728.2021.faa.gz ... done.
+Length: 683095678 (651M) (unauthoritative)
+
+rsnc.0728.2021.faa.gz       100%[========================================>] 651.45M  85.6MB/s    in 7.2s
+
+2021-07-29 20:05:31 (90.2 MB/s) - ‘rsnc.0728.2021.faa.gz’ saved [683095678]
+```
+
+Now we will unzip the data file.
+
+```
 $ gunzip rsnc.0728.2021.faa.gz
 ```
 
@@ -192,3 +215,16 @@ Now we need some sequences of interest to search against the RefSeq database we 
 $ wget ftp://ftp.ncbi.nih.gov/refseq/H_sapiens/mRNA_Prot/human.1.protein.faa.gz
 $ gunzip human.1.protein.faa.gz
 ```
+
+We've downloaded a multi-line FASTA file, but for ease of use, we will now convert this into a single-fasta.
+
+```
+$ sed -e 's/\(^>.*$\)/#\1#/' human.1.protein.faa | tr -d "\r" | tr -d "\n" | sed -e 's/$/#/' | tr "#" "\n" | sed -e '/^$/d' > human.1.protein.faa.cleaned.fasta
+```
+
+Now, we'll BLAST the proteins of Human chromosome 1 against the RefSeq database:
+```
+time singularity exec BLAST.sif blastp -num_threads 8 -db RefSeqExample -query human.1.protein.faa.cleaned.fasta -outfmt 6 -out BLASTP_Results.txt
+```
+
+
