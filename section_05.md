@@ -162,6 +162,29 @@ To start, we are going to need some data to serve as our database to search agai
 
 ```
 $ wget ftp://ftp.ncbi.nih.gov/refseq/daily/rsnc.0728.2021.faa.gz
+```
+
+This shouldn't take long, and produces the following output:
+```
+--2021-07-29 20:05:24--  ftp://ftp.ncbi.nih.gov/refseq/daily/rsnc.0728.2021.faa.gz
+           => ‘rsnc.0728.2021.faa.gz’
+Resolving ftp.ncbi.nih.gov (ftp.ncbi.nih.gov)... 165.112.9.229, 130.14.250.13, 2607:f220:41e:250::13, ...
+Connecting to ftp.ncbi.nih.gov (ftp.ncbi.nih.gov)|165.112.9.229|:21... connected.
+Logging in as anonymous ... Logged in!
+==> SYST ... done.    ==> PWD ... done.
+==> TYPE I ... done.  ==> CWD (1) /refseq/daily ... done.
+==> SIZE rsnc.0728.2021.faa.gz ... 683095678
+==> PASV ... done.    ==> RETR rsnc.0728.2021.faa.gz ... done.
+Length: 683095678 (651M) (unauthoritative)
+
+rsnc.0728.2021.faa.gz       100%[========================================>] 651.45M  85.6MB/s    in 7.2s
+
+2021-07-29 20:05:31 (90.2 MB/s) - ‘rsnc.0728.2021.faa.gz’ saved [683095678]
+```
+
+Now we will unzip the data file.
+
+```
 $ gunzip rsnc.0728.2021.faa.gz
 ```
 
@@ -191,4 +214,50 @@ Now we need some sequences of interest to search against the RefSeq database we 
 ```
 $ wget ftp://ftp.ncbi.nih.gov/refseq/H_sapiens/mRNA_Prot/human.1.protein.faa.gz
 $ gunzip human.1.protein.faa.gz
+```
+
+We've downloaded a multi-line FASTA file, but for ease of use, we will now convert this into a single-fasta.
+
+```
+# Convert multi-line FASTA to single-line FASTA
+$ sed -e 's/\(^>.*$\)/#\1#/' human.1.protein.faa | tr -d "\r" | tr -d "\n" | sed -e 's/$/#/' | tr "#" "\n" | sed -e '/^$/d' > human.1.protein.faa.cleaned.fasta
+```
+
+Now, we'll BLAST the proteins of Human chromosome 1 against the RefSeq database.  Normally, you would want to run your entire query sequence against the database and interpret results, but because these cloud systems we are connected to are small, in the interest of time we are going to reduce our number of query sequences.
+
+```
+head -n 20 human.1.protein.faa.cleaned.fasta > search_query.fasta
+```
+
+This pulls the first 10 protein sequences listed in the human chromosome 1 file into a new file, search_query.fasta.  So instead of searching all 8,067 sequences, we will only search 10 (0.1%) against the RefSeq database we've constructed.
+
+```
+$ time singularity exec BLAST.sif blastp -num_threads 8 -db RefSeqExample -query search_query.fasta -outfmt 6 -out BLASTP_Results.txt -max_target_seqs 1
+```
+
+This gives us the following output:
+```
+Warning: [blastp] Examining 5 or more matches is recommended
+
+real    2m26.278s
+user    7m40.642s
+sys     0m1.062s
+```
+Checking the output file:
+```
+$ head BLASTP_Results.txt
+```
+
+Gives the following:
+```
+NP_001355814.1  XP_042624488.1  47.067  716     228     15      44      651     34      706     1.50e-111   356
+NP_001355815.1  XP_042584322.1  46.857  525     174     12      29      477     181     676     2.60e-73    249
+NP_001355815.1  XP_042584322.1  33.428  353     114     11      205     457     145     476     1.04e-11    73.2
+NP_001355815.1  XP_042584322.1  36.087  230     70      6       1       230     499     651     7.15e-05    51.6
+NP_001355815.1  XP_042584322.1  34.899  298     107     10      232     451     91      379     1.9     37.4
+NP_001361386.1  XP_042585651.1  85.403  1651    186     11      1       1614    1       1633    0.0     2513
+NP_001347100.1  XP_042582653.1  25.943  212     120     7       26      224     7       194     1.67e-04    48.9
+NP_001347100.1  XP_042582653.1  23.445  209     115     9       28      222     105     282     1.7     36.6
+NP_001355178.1  XP_012696246.2  68.670  549     171     1       52      600     76      623     0.0     821
+NP_001355183.1  XP_042566333.1  25.424  295     191     13      31      322     21      289     1.17e-07    59.7
 ```
