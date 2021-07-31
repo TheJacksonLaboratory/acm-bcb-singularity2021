@@ -43,3 +43,26 @@ From:ubuntu
     /opt/samtools/bin/samtools
     echo "/opt/samtools/bin/samtools/"
 ```
+
+
+This will install the OS and samtools
+By defauly it will run samtools.
+
+To modify the receipe just add the application install instructions.
+In this case we are adding bcftools.
+
+It should be added at the end of %post before the runscript section.
+
+```
+wget https://github.com/samtools/bcftools/releases/download/1.12/bcftools-1.12.tar.bz2
+    bzip2 -d bcftools-1.12.tar.bz2
+    tar -xf bcftools-1.12.tar
+    cd bcftools-1.12
+    ./configure --prefix=/opt/bcftools
+    make
+    make install
+    cd /opt
+    rm bcftools-1.12.tar
+    rm -rf bcftools-1.12
+```
+
