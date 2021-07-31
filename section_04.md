@@ -70,4 +70,20 @@ The %runscript section will need to be modified.
 We now can run either samtools or bcftools and the container will need to allow us to pass the application name.
 
 
+#### the following changes need to be made to the PATH and runscript.
+#### The $@ allows us to pass the command to run into the container.
+```
+%environment
+        export PATH=$PATH:/opt/samtools/bin:/opt/bcftools/bin
+
+%runscript
+    echo $PATH
+    exec "$@"
+```
+
+
+### singularity run samtoolsbcf.sif samtools
+
+### singularity shell samtoolsbcf.sif 
+
 
