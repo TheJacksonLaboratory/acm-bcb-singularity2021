@@ -4,9 +4,9 @@ I will install the base OS and then configure the tools it needs to install appl
 
 There are sections in the receipie file to control the build process.
 
-## The first lines define the OS its version and pakcages. In the code here its docker layers for ubuntu
-## There are no files included with this receipe.
-## The post section is where applications are configured and loaded.
+### The first lines define the OS its version and pakcages. In the code here its docker layers for ubuntu
+### There are no files included with this receipe.
+### The post section is where applications are configured and loaded.
 
 The appilcation we will start with here will be Samtools.
 
