@@ -1,14 +1,14 @@
 # Building and Modifying Containers
-The following is an example of a singulaity recipie file.
+The following is an example of a singularity recipe file.
 I will install the base OS and then configure the tools it needs to install applications.
 
-There are sections in the receipie file to control the build process.
+There are sections in the recipe file to control the build process.
 
-### The first lines define the OS its version and pakcages. In the code here its docker layers for ubuntu
-### There are no files included with this receipe.
+### The first lines define the OS its version and packages. In the code here its docker layers for ubuntu
+### There are no files included with this recipe.
 ### The post section is where applications are configured and loaded.
 
-The appilcation we will start with here will be Samtools.
+The application we will start with here will be Samtools.
 
 ```
 Bootstrap:docker
@@ -48,7 +48,7 @@ From:ubuntu
 This will install the OS and samtools
 By default it will run samtools.
 
-#### To modify the receipe just add the application install instructions.
+#### To modify the recipe just add the application install instructions.
 In this case we are adding bcftools.
 
 It should be added at the end of %post before the runscript section.

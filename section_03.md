@@ -1,8 +1,8 @@
 #Scientific Containers
 
-There are many advantages in using containers. In the relm of scitenific computation containers facilitate scaleable acritcutres that are flexable.
+There are many advantages in using containers. In the realm of scientific computation containers facilitate scalable architectures that are flexible.
 
-Containers support many scientific disiplines and have established repositories that can be utilized. 
+Containers support many scientific disciplines and have established repositories that can be utilized. 
 
 ## Docker/Singularity Hub
 
@@ -13,18 +13,18 @@ Vast collection of containers that will provide solutions across:
 
 1) Biology
 2) Chemistry
-3) Math/Statisics
+3) Math/Statistics
 4) Programming Languages.
 ...
 
 
 Build a container to suit your needs.
 	Include only the software and data that is needed.
-        Compnenets in the os the system is built upon won't change.
+        Componenets in the OS the system is built upon won't change.
 
 
 Install specific software versions.
-	Version of releases are important for reproducability of results.
+	Version of releases are important for reproducibility of results.
         Stability of pipelines.
 
 
@@ -40,14 +40,14 @@ nextflow run <your script> -with-singularity [singularity image file]
 ```
 
 
-The container will scale to the eniroment it is running in.
-	# of cpu(s) available can be used without additional paramters being passed.
+The container will scale to the enviroment it is running in.
+	# of cpu(s) available can be used without additional parameters being passed.
 	Same would be true of RAM.
-        Storage will be the login space with addtional storage made usable via bind.
+        Storage will be the login space with additional storage made usable via bind.
 
 
 
-Getting started with a application recipie file.
+Getting started with a application recipe file.
 
 ```
 
