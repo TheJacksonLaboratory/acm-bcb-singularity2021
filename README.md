@@ -25,7 +25,7 @@ All Times in US Central Daylight Time.
     **10:10am-10:20am: BREAK**
 
 4. 10:20am-10:55am: [Building and Modifying Containers](section_04.md)
-5. 10:55am-11:30am: [Using Containers](section_05.md)
+5. 10:55am-11:30am: [Using Containers & Questions](section_05.md)
 
 
 ***
